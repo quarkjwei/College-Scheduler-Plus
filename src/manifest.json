@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "manifest_version": 2,
   "description": "This extension integrates rate my professors into collegescheduler.com's interface plus more?",
-  "homepage_url": "https://github.com/quarkjwei/College_Scheduler-Plus",
+  "homepage_url": "https://github.com/quarkjwei/College-Scheduler-Plus",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",

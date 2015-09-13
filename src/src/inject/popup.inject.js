@@ -17,7 +17,7 @@ chrome.extension.sendMessage({}, function(response) {
 		if(urlParams.close!==undefined){
 			parent.closeIFrame();
 		}
-
+		console.log(urlParams);
 		//General storage.
 		var dataStorage = {};
 		if(localStorage.getItem("data")!==null){	//Get general storage object
@@ -29,7 +29,12 @@ chrome.extension.sendMessage({}, function(response) {
 		var cache = [];
 
 		$("#reg").find("th").eq(5).after("<th>Rating</th>");
+		var count = 0;
 		$("#reg").find("tr[align='center']").each(function(){//Each row
+			if($(this).find("td").first().find("input").prop("checked")){
+				$(this).css("background-color", "#66EC66");
+				count++;
+			}
 			var name = $(this).find("td").eq(5).text().split(",");
 			var lname = name[0].split(" ")[0];
 			var fname = name[1].split(" ")[1];
@@ -81,6 +86,9 @@ chrome.extension.sendMessage({}, function(response) {
 					$(this).find("td").first().find("input").prop("checked", false);
 			}
 		});
+		console.log(dataStorage[urlParams.term][urlParams.subject + urlParams.courseno]);
+		console.log(urlParams.subject + urlParams.courseno);
+		$("#pnlOptionInstructions").append("<span></br>" + count + " classes have teachers who meet the " + dataStorage[urlParams.term][urlParams.subject + urlParams.courseno] +  " rating threshold</span>");
 		// console.log(urlParams);
 		//Save cache
 		localStorage.setItem("cache", JSON.stringify(cache));

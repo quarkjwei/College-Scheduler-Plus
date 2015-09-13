@@ -1,0 +1,51 @@
+{
+  "name": "College Scheduler Plus",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "This extension integrates rate my professors into collegescheduler.com's interface plus more?",
+  "homepage_url": "https://github.com/quarkjwei/College_Scheduler-Plus",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "permissions": [
+    "*://*.collegescheduler.com/app/*",
+    "http://*/"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.collegescheduler.com/app/Main.aspx*"
+      ],
+      "css": [
+        "src/inject/bootstrap-slider.min.css",
+        "src/inject/inject.css"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.collegescheduler.com/app/Main.aspx*"
+      ],
+      "js": [
+        "src/inject/jquery-2.1.4.min.js",
+        "src/inject/bootstrap-slider.min.js",
+        "src/inject/defiant.min.js",
+        "src/inject/inject.js"
+      ]
+  },
+  {
+      "matches": [
+          "*://*.collegescheduler.com/app/popup/*"
+      ],
+      "js": [
+          "src/inject/jquery-2.1.4.min.js",
+          "src/inject/defiant.min.js",
+          "src/inject/popup.inject.js"
+      ],
+      "all_frames": true
+  }
+  ],
+  "web_accessible_resources": ["src/inject/bootstrap.min.css"]
+}

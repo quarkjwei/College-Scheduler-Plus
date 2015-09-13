@@ -1,0 +1,38 @@
+/* Hide elemnts before jquery kicks in */
+#pnlCurrentAndStudentCart, .main-courses-breaks{
+    display: none;
+}
+/* Main page tables to 100% width */
+.main-courses, .main-breaks, .full-width, .Grid{
+    width: 100% !important;
+}
+.main-courses, .main-breaks{
+    float: left !important;
+}
+/* Lightbox width to 100% width */
+#cboxTopLeft, #cboxTopCenter, #cboxTopRight, #cboxMiddleLeft, #cboxMiddleRight, #cboxBottomLeft, #cboxBottomCenter, #cboxBottomRight{
+    display: none !important;
+}
+#colorbox, #cboxWrapper, #cboxContent, #cboxLoadedContent{
+    width: 100% !important;
+}
+#colorbox{
+    left: 0 !important;
+}
+/* Global controls */
+.global-controls{
+    text-align: left !important;
+}
+/* Slider width */
+.slider.slider-horizontal{
+    width: 80%;
+}
+.slider-selection{
+    background: #468ecb;
+}
+.slider-track-high{
+    background: #d0e2f2;
+}
+#iframes{
+    display: none;
+}
